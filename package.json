@@ -1,0 +1,43 @@
+{
+  "name": "linode-api-wrapper",
+  "version": "0.0.1",
+  "description": "Linode API JavaScript Wrapper",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "rimraf dist/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-typescript": "^7.0.0-beta.49",
+    "@types/jest": "^22.2.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.0.0",
+    "codecov": "^3.0.2",
+    "coveralls": "^3.0.1",
+    "jest": "^23.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coverageDirectory": "./coverage",
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    }
+  }
+}
