@@ -1,14 +1,8 @@
-import {
-  compose,
-  lensPath,
-  over,
-  set,
-  view,
-
-  /** Types */
-  Lens,
-} from 'ramda';
 import invariant from 'invariant';
+import {
+    /** Types */
+    Lens, compose, lensPath, over, set, view
+} from 'ramda';
 import { request } from './request';
 
 interface RequestConfig {
@@ -65,9 +59,9 @@ class Request {
     return request(this.config);
   }
 
-  private view = (lens: Lens) => {
-    this.config = view(lens, this.config);
-  };
+  // private view = (lens: Lens) => {
+  //   this.config = view(lens, this.config);
+  // };
 
   private set = (lens: Lens) => (value: any) => {
     this.config = set(lens, value, this.config);
@@ -86,9 +80,9 @@ class Request {
   private updateParams = this.over(ConfigLenses.params);
 }
 
-function Filtered<T extends { new(...args: any[]): any }>(constructor: T) {
-  return constructor;
-}
+// function Filtered<T extends { new(...args: any[]): any }>(constructor: T) {
+//   return constructor;
+// }
 
 function Paginated<T extends { new(...args: any[]): any }>(constructor: T) {
   return class extends constructor {
