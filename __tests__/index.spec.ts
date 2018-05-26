@@ -1,9 +1,4 @@
-import LinodeAPIWrapper, {
-  TypesRequest,
-} from '../lib/index';
-import { request } from '../lib/request';
-
-jest.mock('../lib/request', () => ({ request: jest.fn(() => Promise.resolve()) }));
+import LinodeAPIWrapper from '../lib/index';
 
 describe('LinodeAPIWrapper', () => {
 
@@ -104,31 +99,6 @@ describe('LinodeAPIWrapper', () => {
             expect(request.config.params).toHaveProperty('page_size', 100);
           });
         });
-      });
-    });
-  });
-
-  describe('GET request', () => {
-    const L = new LinodeAPIWrapper('ABC123');
-
-    it('should return a promise', async () => {
-      const request = L.types
-        .get();
-
-      expect(request).toBeInstanceOf(Promise);
-    });
-
-    it('should call request with generated config', async () => {
-      await L.types
-        .page(1)
-        .pageSize(25)
-        .get();
-
-      expect(request).toBeCalledWith({
-        headers: { authorization: 'Bearer ABC123' },
-        method: 'GET',
-        params: { page: 1, page_size: 25 },
-        url: 'https://api.linode.com/v4/types',
       });
     });
   });
