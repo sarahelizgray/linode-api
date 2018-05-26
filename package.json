@@ -19,7 +19,9 @@
     "@babel/plugin-proposal-decorators": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
     "@babel/preset-typescript": "^7.0.0-beta.49",
+    "@types/invariant": "^2.2.29",
     "@types/jest": "^22.2.3",
+    "@types/ramda": "^0.25.29",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.0.0",
     "codecov": "^3.0.2",
@@ -39,5 +41,9 @@
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
     }
+  },
+  "dependencies": {
+    "invariant": "^2.2.4",
+    "ramda": "^0.25.0"
   }
 }
