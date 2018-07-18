@@ -1,7 +1,9 @@
-import { sum } from '../lib/index';
+import { instance } from '../lib';
 
 describe('index', () => {
     it('should work', () => {
-        expect(sum(1,2)).toEqual(3);
+        console.log(
+          instance.getInstances(),
+        )
     });
 });
